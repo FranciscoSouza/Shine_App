@@ -12,12 +12,12 @@ library(shiny)
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
-  titlePanel("BODY MASS Calculator"),
+  titlePanel("Body Mass Index Calc"),
   
   sidebarLayout(
     sidebarPanel( 
       
-      helpText("BMI Index is common measure for health, this application helps you find it out"),            
+      helpText("Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women"),            
       br(),           
       numericInput("ing_weight_kg",label = h4("How much do you weight (KG)"),min = 40, max = 300,0), #, value = 70
       br(),

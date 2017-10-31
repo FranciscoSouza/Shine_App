@@ -17,14 +17,9 @@ shinyServer(function(input, output) {
   observe({
     input$FindBMI
     values$bmi <- isolate({
-      
       input$ing_weight_kg/(input$int_height_cm/100 * input$int_height_cm/100)
-      
-    
-      
     })
   })
-  
   
   
   # Display your current values
@@ -38,9 +33,7 @@ shinyServer(function(input, output) {
     paste("Current Weight in KG : ", isolate(input$ing_weight_kg))
   })
   
-  
      output$status_indicator <- renderText({
-
        
        if(input$FindBMI == 0) ""
        else {
@@ -48,7 +41,6 @@ shinyServer(function(input, output) {
          if (values$bmi < 18.5)
          {
            values$status_indicator = "Underweight"
-           
          }
          
          else if (values$bmi < 24.9)
@@ -63,24 +55,14 @@ shinyServer(function(input, output) {
          {
            values$status_indicator="Obesity"
          }
-         
-         
          paste("Classification according to BMI: ", values$status_indicator)
        }
      })
   
-  
   # Display your BMI
-  
   output$BMI_result <- renderText({
     if(input$FindBMI == 0) ""
     else
       paste("Your current BMI is:", values$bmi)
   })
-  
-  
-
-  
-
-  
 })
